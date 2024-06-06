@@ -15,4 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
+Route::get('/about', function () {
+    $username = "Baudo";
+
+    $data= [
+        'username' => $username
+    ];
+    return view('about', $data);
+})->name('about');
